@@ -4,7 +4,7 @@ class CalendarsController < ApplicationController
   def index
     @todays_data = Date.today 
     @plan = Plan.new
-    getWeek
+    get_Week
   end
 
   # 予定の保存
@@ -44,7 +44,7 @@ class CalendarsController < ApplicationController
 
       day_of_week = wdays[wdays_num]
 
-      days = { :month => (@todays_date + x).month, :date => (@todays_date+x).day, :plans => today_plans, :wdays => day_of_week}
+      days = { month: (@todays_date + x).month, date: (@todays_date+x).day, plans: today_plans, wdays: day_of_week}
       @week_days.push(days)
     end
   end
