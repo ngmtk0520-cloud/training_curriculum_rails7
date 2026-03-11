@@ -4,7 +4,7 @@ class CalendarsController < ApplicationController
   def index
     @todays_data = Date.today 
     @plan = Plan.new
-    get_Week
+    get_week
   end
 
   # 予定の保存
@@ -20,7 +20,7 @@ class CalendarsController < ApplicationController
   end
 
 
-  def get_Week
+  def get_week
     wdays = ['(日)','(月)','(火)','(水)','(木)','(金)','(土)']
 
     # Dateオブジェクトは、日付を保持しています。下記のように`.today.day`とすると、今日の日付を取得できます。
